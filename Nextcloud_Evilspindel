@@ -9,8 +9,8 @@ services:
        - PGID=100
        - TZ=Europe/Netherlands
        - REDIS_HOST=redis-nextcloud
-       - REDIS_HOST_PASSWORD=YOURREDISPASSWORD
-       - NEXTCLOUD_TRUSTED_DOMAINS=217.10.45.46 evilspindel.top
+       - REDIS_HOST_PASSWORD=pass
+       - NEXTCLOUD_TRUSTED_DOMAINS=
        - PHP_MEMORY_LIMIT=1024M
        - PHP_UPLOAD_LIMIT=1024M
     volumes:
@@ -28,5 +28,5 @@ services:
   redis-nextcloud:
      image: redis:alpine
      container_name: redis-nextcloud
-     command: redis-server --requirepass YOURREDISPASSWORD
+     command: redis-server --requirepass pass
      restart: unless-stopped
